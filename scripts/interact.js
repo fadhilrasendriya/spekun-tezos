@@ -37,7 +37,7 @@ async function kembalikan_spekun(id_sepeda, peminjam, node) {
 
   const contract = await Tezos.contract.at(CONTRACT_ADDRESS);
 
-  const tx = await contract.methods.return_sepeda(id_sepeda = id_sepeda, peminjam = peminjam, node = node).send();
+  const tx = await contract.methods.return_sepeda(id_sepeda = id_sepeda, node = node, peminjam = peminjam).send();
 
   console.log(await tx.confirmation(1));
 }
